@@ -15,3 +15,4 @@ MonoBehaviour:
   speedOfMoving: 8
   interval: 2
   StartBoard: {fileID: 4846452773434860, guid: f660d4218e620fc478393e64106bdcbb, type: 2}
+  EndBoard: {fileID: 4517927125295854, guid: b5b1fc7d69c91fd419ecbaf1873e46db, type: 2}

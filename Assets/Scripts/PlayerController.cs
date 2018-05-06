@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
         {
             Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z);
             position = Camera.main.ScreenToWorldPoint(position);
-            this.transform.position = Vector3.Lerp(transform.position, position, _config.speedOfMoving * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(transform.position, position, 1);
         }
 
         if (PlayerPrefs.GetInt("Record") > 0)

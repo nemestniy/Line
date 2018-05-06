@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BroadcastInfo : MonoBehaviour {
 
     public Config _config;
-    public static int score = 0;
+    public static int score;
     public static float k;
     private Text txt;
     private float timer;
@@ -15,6 +15,7 @@ public class BroadcastInfo : MonoBehaviour {
     {
         txt = GetComponent<Text>();
         timer = _config.interval;
+        score = 0;
     }
 
     void Update()
@@ -24,7 +25,6 @@ public class BroadcastInfo : MonoBehaviour {
         timer -= Time.deltaTime * k * 2;
         if(timer <= 0)
         {
-            score++;
             timer = _config.interval;
         }
         k += 0.01f;

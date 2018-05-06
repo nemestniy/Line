@@ -23,15 +23,12 @@ public class RoadMove : MonoBehaviour {
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                speed += 0.001f;
+                speed *= 1.01f;
                 timer = _config.interval;
             }
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Board")
+        if(this.transform.position.y <= _config.EndBoard.position.y)
             this.transform.position = _config.StartBoard.position;
     }
 }

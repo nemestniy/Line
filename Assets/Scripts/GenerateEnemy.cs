@@ -7,7 +7,7 @@ public class GenerateEnemy : MonoBehaviour {
     public GameObject Enemy;
 
     public Config _config;
-    private float timer;
+    public float timer;
 
 	// Use this for initialization
 	void Start () {
@@ -16,13 +16,13 @@ public class GenerateEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer -= Time.deltaTime * BroadcastInfo.score * .1f;
+        timer -= Time.deltaTime * (BroadcastInfo.score + 1) * .5f;
         if(timer <= 0)
         {
             Enemy.transform.position = getPosition();
             Enemy.transform.localScale = getScale();
             Instantiate(Enemy);
-            timer = _config.interval;
+            timer = _config.interval + BroadcastInfo.score;
         }
 	}
 
@@ -35,7 +35,7 @@ public class GenerateEnemy : MonoBehaviour {
 
     static Vector3 getScale()
     {
-        float scale = Random.Range(2f, 10f);
+        float scale = Random.Range(.45f, .7f);
         return new Vector3(scale, scale, 1);
     }
 }

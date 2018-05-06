@@ -9,5 +9,6 @@ public class Config : ScriptableObject {
     public float speedOfMoving;
     public float interval;
     public Transform StartBoard;
+    public Transform EndBoard;
 
 }
